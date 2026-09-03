@@ -62,9 +62,9 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --radius: 0.25rem;
+  --background: oklch(0.97 0.005 250);
+  --foreground: oklch(0.25 0.02 260);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
@@ -95,6 +95,58 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+
+  /* SIGSVE institutional tokens */
+  --senasa-red: oklch(0.48 0.18 27);
+  --senasa-blue: oklch(0.38 0.11 255);
+  --panel: oklch(0.99 0.003 250);
+  --panel-header: oklch(0.9 0.03 250);
+  --field-required: oklch(0.5 0.2 27);
+  --field-highlight: oklch(0.92 0.06 25);
+  --legacy-border: oklch(0.78 0.02 250);
+  --tab-active: oklch(1 0 0);
+  --tab-inactive: oklch(0.91 0.01 250);
+}
+
+@theme inline {
+  --color-senasa-red: var(--senasa-red);
+  --color-senasa-blue: var(--senasa-blue);
+  --color-panel: var(--panel);
+  --color-panel-header: var(--panel-header);
+  --color-field-required: var(--field-required);
+  --color-field-highlight: var(--field-highlight);
+  --color-legacy-border: var(--legacy-border);
+  --color-tab-active: var(--tab-active);
+  --color-tab-inactive: var(--tab-inactive);
+}
+
+@utility legacy-input {
+  border: 1px solid var(--legacy-border);
+  background: oklch(1 0 0);
+  padding: 0.125rem 0.375rem;
+  font-size: 0.8125rem;
+  line-height: 1.4rem;
+  color: var(--foreground);
+  &:focus {
+    outline: 1px solid var(--senasa-blue);
+  }
+}
+
+@utility legacy-input-required {
+  border: 1px solid var(--field-required);
+  background: var(--field-highlight);
+  padding: 0.125rem 0.375rem;
+  font-size: 0.8125rem;
+  line-height: 1.4rem;
+  color: var(--foreground);
+  &:focus {
+    outline: 1px solid var(--senasa-red);
+  }
+}
+
+@utility legacy-fieldset {
+  border: 1px solid var(--legacy-border);
+  padding: 0.75rem 1rem 1rem;
 }
 
 .dark {
